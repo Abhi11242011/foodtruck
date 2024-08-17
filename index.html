@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lubbock Street Eats Catering offers delicious meals on wheels. Check out our menu, location, and order online."
+    />
+    <title>Food Truck</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="header-content">
+        <img
+          src="logo.png"
+          alt="Lubbock Street Eats Catering Logo"
+          class="circular-photo"
+        />
+
+        <h1>Lubbock Street Eats Catering</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#order">Order Online</a></li>
+        </ul>
+      </nav>
+      <div class="social-media">
+        <a
+          href="https://www.facebook.com/Lbkstreeteats"
+          aria-label="Facebook"
+          target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.tiktok.com/@lubbock_street_eats"
+          target="_blank"
+          aria-label="Tiktok"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/lubbock_street_eats_catering/"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+      <div class="phone-number"><i class="fas fa-phone"></i> 806-4517091</div>
+    </header>
+    <img src="truck_photo.jpg" alt="Food Truck Photo" class="truck_photo" />
+
+    <div class="photo-gallery">
+      <button class="gallery-nav prev" onclick="prevPhotos()">&#10094;</button>
+
+      <div class="gallery-container">
+        <img src="photo1.jpg" alt="Delicious dish 1" class="gallery-photo" />
+        <img src="photo2.jpg" alt="Delicious dish 2" class="gallery-photo" />
+        <img src="photo3.jpg" alt="Delicious dish 3" class="gallery-photo" />
+        <img src="photo4.jpg" alt="Delicious dish 4" class="gallery-photo" />
+        <img src="photo5.jpg" alt="Delicious dish 5" class="gallery-photo" />
+        <img src="photo6.jpg" alt="Delicious dish 6" class="gallery-photo" />
+        <img src="photo7.jpg" alt="Delicious dish 7" class="gallery-photo" />
+        <img src="photo8.jpg" alt="Delicious dish 8" class="gallery-photo" />
+      </div>
+
+      <button class="gallery-nav next" onclick="nextPhotos()">&#10095;</button>
+    </div>
+
+    <div id="location" class="location">
+      <h2>Our Location</h2>
+      <div class="location-box">
+        <p>We are located at:</p>
+        <a
+          href="https://www.google.com/maps/place/3538+34th+St,+Lubbock,+TX+79410/@33.5630169,-101.8958123,16.61z/data=!4m6!3m5!1s0x86fe72a7033c5a8b:0xea901075625791c9!8m2!3d33.5636693!4d-101.8918078!16s%2Fg%2F11b8zf14xc?entry=ttu"
+          target="_blank"
+        >
+          <p class="add"><strong>3538 34th st</strong>, Lubbock, TX</p></a
+        >
+        <p><em>Everyday, 11:00 am - 2:00 pm and 5:00 pm - 10:00 pm</em></p>
+      </div>
+    </div>
+    <div class="qr">
+      <img src="qr.png" alt="qrcode" class="qr_code" />
+    </div>
+
+    <footer>
+      <div class="social-media-footer">
+        <a
+          href="https://www.facebook.com/Lbkstreeteats"
+          target="_blank"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.tiktok.com/@lubbock_street_eats"
+          target="_blank"
+          aria-label="Tiktok"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/lubbock_street_eats_catering/"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+      <p>&copy; 2024 Lubbock Streets Eats Catering</p>
+    </footer>
+
+    <script>
+      let currentIndex = 0;
+      const photosPerPage = 4;
+      const photos = document.querySelectorAll(".gallery-photo");
+
+      function showPhotos() {
+        photos.forEach((photo, index) => {
+          if (index >= currentIndex && index < currentIndex + photosPerPage) {
+            photo.style.display = "block";
+          } else {
+            photo.style.display = "none";
+          }
+        });
+      }
+
+      function nextPhotos() {
+        if (currentIndex + photosPerPage < photos.length) {
+          currentIndex += photosPerPage;
+          showPhotos();
+        }
+      }
+
+      function prevPhotos() {
+        if (currentIndex - photosPerPage >= 0) {
+          currentIndex -= photosPerPage;
+          showPhotos();
+        }
+      }
+
+      // Initial display
+      showPhotos();
+    </script>
+  </body>
+</html>
